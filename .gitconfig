@@ -1,4 +1,6 @@
 [user]
 	email = avinash@dwarapu.me
 	name = Avinash Dwarapu
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 
