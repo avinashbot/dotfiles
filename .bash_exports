@@ -1,6 +1,17 @@
 # set editor
 export EDITOR='vim'
 
+# bash history size
+export HISTSIZE='500'
+export HISTFILESIZE="${HISTSIZE}"
+
+# omit duplicates and commands that begin with a space from history
+export HISTCONTROL='ignoreboth'
+
+# prefer us-english and use utf-8
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
+
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
