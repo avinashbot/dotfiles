@@ -9,7 +9,7 @@ set showcmd
 set incsearch
 set hlsearch
 set mouse=a
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 syntax on
 filetype off
