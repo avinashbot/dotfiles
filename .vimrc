@@ -9,6 +9,7 @@ set showcmd
 set incsearch
 set hlsearch
 set mouse=a
+set clipboard=unnamed
 
 syntax on
 filetype off
@@ -61,6 +62,7 @@ colorscheme molokai
 
 " --- Keymaps ---
 nnoremap <C-W> :q<CR>
+tnoremap <Esc> <C-\><C-n>
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
