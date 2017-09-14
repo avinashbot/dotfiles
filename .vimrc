@@ -62,7 +62,6 @@ colorscheme molokai
 
 " --- Keymaps ---
 nnoremap <C-W> :q<CR>
-tnoremap <Esc> <C-\><C-n>
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -74,9 +73,13 @@ map <S-Tab> :bprevious<cr>
 
 " ctrl-f / ctrl-b : scroll down/up
 
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+endif
+
 " --- Cursor Style Change (Gnome Terminal)
 
-if has("autocmd")
+if has('autocmd')
   au VimEnter,InsertLeave * silent execute '!echo -ne "\e[1 q"' | redraw!
     au InsertEnter,InsertChange *
         \ if v:insertmode == 'i' | 
