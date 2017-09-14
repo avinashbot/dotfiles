@@ -39,6 +39,7 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Install Go 1.9 (from tarball)
 
+echo "[install] installing go 1.9..."
 wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz
 rm go1.9.linux-amd64.tar.gz
