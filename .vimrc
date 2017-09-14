@@ -31,6 +31,7 @@ Plugin 'mhinz/vim-startify'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'qpkorr/vim-bufkill'
 let g:nerdtree_tabs_open_on_console_startup = 1
 
 " Airline/Extensions
@@ -61,7 +62,7 @@ filetype plugin indent on
 colorscheme molokai
 
 " --- Keymaps ---
-nnoremap <C-W> :q<CR>
+nnoremap <C-W> :BD<cr>
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
