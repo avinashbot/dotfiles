@@ -19,5 +19,4 @@ alias grep='grep color=auto'
 alias ts='gvfs-trash'
 
 # lets you update configs
-alias cfg='/usr/bin/git --git-dir=/home/avinash/.cfg/ --work-tree=/home/avinash'
-
+alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
