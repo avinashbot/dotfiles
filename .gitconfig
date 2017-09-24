@@ -4,3 +4,5 @@
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 
+[alias]
+	graph = log --graph --decorate --pretty=oneline --abbrev-commit --all
