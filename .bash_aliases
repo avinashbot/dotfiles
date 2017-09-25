@@ -18,5 +18,8 @@ alias grep='grep color=auto'
 # lets you rm a file safely
 alias ts='gvfs-trash'
 
+# ehh whatever, i give up
+(type nvim > /dev/null 2>&1) && alias vim='nvim'
+
 # lets you update configs
 alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
