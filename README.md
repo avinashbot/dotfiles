@@ -19,7 +19,7 @@ cfg checkout
 source $HOME/.bashrc
 
 # optionally
-install-on-new-machine.sh
+run-parts ~/.cfg-setup
 ```
 
 ### Customization

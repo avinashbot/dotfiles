@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+if ! type "rbenv" > /dev/null; then
+  # rbenv
+  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+  (cd ~/.rbenv && src/configure && make -C src) || true
+  # ruby-build
+  mkdir -p "$(rbenv root)"/plugins
+  git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+  # ruby-2.4.0
+  rbenv install 2.4.0
+fi

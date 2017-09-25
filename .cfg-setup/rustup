@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# rustup
+if ! type "rustup" > /dev/null; then
+  curl https://sh.rustup.rs -sSf | sh -s -- -y
+fi
