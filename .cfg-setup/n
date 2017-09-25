@@ -7,3 +7,4 @@ if ! type "node" > /dev/null; then
   curl -L https://git.io/n-install | bash -s -- -y
   n latest
 fi
+
