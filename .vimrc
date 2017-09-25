@@ -32,6 +32,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'qpkorr/vim-bufkill'
+let NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_console_startup = 1
 
 " Airline/Extensions
