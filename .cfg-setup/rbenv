@@ -4,8 +4,8 @@ IFS=$'\n\t'
 
 # rbenv
 if ! type "rbenv" > /dev/null; then
-  git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-  (cd ~/.rbenv && src/configure && make -C src) || true
+  git clone https://github.com/rbenv/rbenv.git $HOME/.rbenv
+  (cd $HOME/.rbenv && src/configure && make -C src) || true
 
   # ruby-build
   mkdir -p "$(rbenv root)"/plugins
@@ -14,3 +14,4 @@ if ! type "rbenv" > /dev/null; then
   # ruby-2.4.0
   rbenv install 2.4.0
 fi
+

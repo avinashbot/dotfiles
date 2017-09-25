@@ -8,3 +8,4 @@ if ! type "go" > /dev/null; then
   tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz
   rm go1.9.linux-amd64.tar.gz
 fi
+

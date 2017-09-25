@@ -6,3 +6,4 @@ IFS=$'\n\t'
 if ! type "rustup" > /dev/null; then
   curl https://sh.rustup.rs -sSf | sh -s -- -y
 fi
+
