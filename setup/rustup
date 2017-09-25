@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# rustup
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+

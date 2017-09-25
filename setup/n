@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# n (for node)
+curl -L https://git.io/n-install | bash -s -- -y
+n latest
+
