@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# setup password+
+if [ -f /sys/hypervisor/uuid ] && [ `head -c 3 /sys/hypervisor/uuid` == ec2 ] && ! [ -f $HOME/.google-authenticator ]; then
+  # TODO: maybe make it work outside ubuntu in the future?
+
+  sudo apt-get update
+  sudo apt-get -y install libpam-google-authenticator augeas-tools
+
+  augtool << EOF
+    # google-authenticator pam module
+    rm /files/etc/pam.d/sshd/*[module = "pam_google_authenticator.so"]
+    set /files/etc/pam.d/sshd/01/type        auth
+    set /files/etc/pam.d/sshd/01/control     required
+    set /files/etc/pam.d/sshd/01/module      pam_google_authenticator.so
+    set /files/etc/pam.d/sshd/01/argument[1] nullok
+
+    rm /files/etc/pam.d/login/*[module = "pam_google_authenticator.so"]
+    set /files/etc/pam.d/login/01/type        auth
+    set /files/etc/pam.d/login/01/control     required
+    set /files/etc/pam.d/login/01/module      pam_google_authenticator.so
+    set /files/etc/pam.d/login/01/argument[1] nullok
+
+    # add 2fa to sshd_config
+    set /files/etc/ssh/sshd_config/UsePAM yes
+
+    # match current logged-in user and enable keyboard-interactive (or publickey as backup)
+    set /files/etc/ssh/sshd_config/Match[Condition/User = "$USER"]/Settings/PasswordAuthentication yes
+    set /files/etc/ssh/sshd_config/Match[Condition/User = "$USER"]/Settings/ChallengeResponseAuthentication yes
+    set /files/etc/ssh/sshd_config/Match[Condition/User = "$USER"]/Settings/AuthenticationMethods[01] publickey
+    set /files/etc/ssh/sshd_config/Match[Condition/User = "$USER"]/Settings/AuthenticationMethods[02] keyboard-interactive
+
+    # we're done, save
+    print /files/etc/ssh/sshd_config
+EOF
+
+  # restart ssh service
+  sudo systemctl restart sshd.service
+fi
