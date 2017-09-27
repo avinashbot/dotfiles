@@ -3,7 +3,6 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # rustup
-if ! type "rustup" > /dev/null; then
+if ! hash rustc 2>/dev/null; then
   curl https://sh.rustup.rs -sSf | sh -s -- -y
 fi
-

@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # go1.9 (from tarball)
-if ! type "go" > /dev/null; then
+if ! hash go 2>/dev/null; then
   wget https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz
   sudo tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz
   rm go1.9.linux-amd64.tar.gz
