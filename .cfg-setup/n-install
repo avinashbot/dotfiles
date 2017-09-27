@@ -4,7 +4,7 @@ IFS=$'\n\t'
 
 # n (for node)
 if ! type "node" > /dev/null; then
+  sudo apt-get install make
   curl -L https://git.io/n-install | bash -s -- -y
   n latest
 fi
-
