@@ -32,8 +32,12 @@ if [ -f /sys/hypervisor/uuid ] && [ `head -c 3 /sys/hypervisor/uuid` == ec2 ] &&
     set /files/etc/ssh/sshd_config/Match[Condition/User = "$USER"]/Settings/AuthenticationMethods[01] publickey
     set /files/etc/ssh/sshd_config/Match[Condition/User = "$USER"]/Settings/AuthenticationMethods[02] keyboard-interactive
 
+    # print /files/etc/ssh/sshd_config
+    # print /files/etc/pam.d/sshd
+    # print /files/etc/pam.d/login
+
     # we're done, save
-    print /files/etc/ssh/sshd_config
+    save
 EOF
 
   # restart ssh service
