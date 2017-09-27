@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-set -euo pipefail
-IFS=$'\n\t'
-
-# rustup
-if ! hash rustc 2>/dev/null; then
-  curl https://sh.rustup.rs -sSf | sh -s -- -y
-fi
