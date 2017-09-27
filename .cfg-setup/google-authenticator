@@ -9,7 +9,7 @@ if [ -f /sys/hypervisor/uuid ] && [ `head -c 3 /sys/hypervisor/uuid` == ec2 ] &&
   sudo apt-get update
   sudo apt-get -y install libpam-google-authenticator augeas-tools
 
-  augtool << EOF
+  sudo augtool << EOF
     # google-authenticator pam module
     rm /files/etc/pam.d/sshd/*[module = "pam_google_authenticator.so"]
     set /files/etc/pam.d/sshd/01/type        auth
