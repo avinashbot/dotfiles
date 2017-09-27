@@ -16,5 +16,5 @@ if ! hash rbenv 2>/dev/null; then
   git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
   # ruby-2.4.0
-  rbenv install 2.4.0
+  rbenv install -v 2.4.0
 fi

@@ -17,9 +17,6 @@ alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 cfg config --local status.showUntrackedFiles no
 cfg checkout
 source $HOME/.bashrc
-
-# optionally
-run-parts ~/.cfg-setup
 ```
 
 ### Customization
