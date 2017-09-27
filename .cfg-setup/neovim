@@ -4,9 +4,7 @@ IFS=$'\n\t'
 
 # neovim
 if ! hash nvim 2>/dev/null; then
-  curl -L https://github.com/neovim/neovim/releases/download/v0.2.0/nvim.appimage \
-       -o $HOME/bin/nvim
-  chmod +x $HOME/bin/nvim
+  sudo apt-get install neovim
 fi
 
 # vundle
