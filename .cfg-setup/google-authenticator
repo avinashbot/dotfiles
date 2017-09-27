@@ -27,6 +27,7 @@ if [ -f /sys/hypervisor/uuid ] && [ `head -c 3 /sys/hypervisor/uuid` == ec2 ] &&
     set /files/etc/ssh/sshd_config/UsePAM yes
 
     # match current logged-in user and enable keyboard-interactive (or publickey as backup)
+    set /files/etc/ssh/sshd_config/01/Match/Condition/User $USER
     set /files/etc/ssh/sshd_config/Match[Condition/User = "$USER"]/Settings/PasswordAuthentication yes
     set /files/etc/ssh/sshd_config/Match[Condition/User = "$USER"]/Settings/ChallengeResponseAuthentication yes
     set /files/etc/ssh/sshd_config/Match[Condition/User = "$USER"]/Settings/AuthenticationMethods[01] publickey
