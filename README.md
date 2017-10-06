@@ -9,13 +9,14 @@
 
 ### Install Separately
 
-- [rbenv](https://github.com/rbenv/rbenv)
-- [n](https://github.com/tj/n)
-- [golang](https://golang.org/doc/install#install)
-- [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-- [rustup](https://www.rustup.rs/)
-- [stack](https://docs.haskellstack.org/en/stable/README/#how-to-install)
-- [code](https://code.visualstudio.com/) (one-monokai, markdown-preview-github-styles, vscode-todo-highlight)
+[rbenv](https://github.com/rbenv/rbenv),
+[n](https://github.com/tj/n),
+[golang](https://golang.org/doc/install#install),
+[neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim),
+[rustup](https://www.rustup.rs/),
+[stack](https://docs.haskellstack.org/en/stable/README/#how-to-install)
+
+[code](https://code.visualstudio.com/) (one-monokai, markdown-preview-github-styles, vscode-todo-highlight)
 
 ### Installation
 
