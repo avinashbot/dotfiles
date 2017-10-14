@@ -13,10 +13,10 @@ alias cealr='clear'
 alias cearl='clear'
 
 # add color to grep
-alias grep='grep color=auto'
+alias grep='grep --color=auto'
 
 # lets you rm a file safely
-alias ts='gvfs-trash'
+alias ts='gio trash'
 
 # ehh whatever, i give up
 (type nvim > /dev/null 2>&1) && alias vim='nvim'
