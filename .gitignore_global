@@ -1,9 +1,6 @@
 # vscode
 .vscode/
 
-# dotfiles repo
-.cfg/
-
 # Node
 npm-debug.log
 
