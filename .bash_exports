@@ -1,5 +1,5 @@
 # set editor
-export EDITOR='vim'
+export EDITOR='nano'
 
 # bash history size
 export HISTSIZE='500'
@@ -34,3 +34,4 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 # vscode
 export ELECTRON_TRASH=gio
+
