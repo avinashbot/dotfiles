@@ -19,5 +19,4 @@ alias grep='grep --color=auto'
 alias ts='gio trash'
 
 # lets you update configs
-alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
