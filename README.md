@@ -16,8 +16,6 @@
 [rustup](https://www.rustup.rs/),
 [stack](https://docs.haskellstack.org/en/stable/README/#how-to-install)
 
-[code](https://code.visualstudio.com/) (one-monokai, markdown-preview-github-styles, vscode-todo-highlight)
-
 ### Installation
 
 *[source](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo)*

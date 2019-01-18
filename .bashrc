@@ -6,20 +6,32 @@ case $- in
       *) return;;
 esac
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-# check window size and update LINES and COLUMNS after each command
-shopt -s checkwinsize
-# match globs (**/*.txt)
+# defer to bash dotfiles for the real fun stuff
+for file in ~/.{bash_prompt,bash_exports,bash_aliases}; do
+    [ -r "$file" ] && source "$file"
+done
+unset file
+
+# Save multi-line commands as one command
+shopt -s cmdhist
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+# Correct spelling errors in arguments supplied to cd
+shopt -s cdspell
+# Autocorrect on directory names to match a glob.
+shopt -s dirspell
+# Turn on recursive globbing (enables ** to recurse all directories)
 shopt -s globstar
+
+# Sync history over multiple term windows.
+export HISTCONTROL="erasedups:ignoreboth"
+export HISTSIZE=100000
+export HISTFILESIZE=$HISTSIZE
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
 
 # enable programmable completion features
 if ! shopt -oq posix; then
@@ -29,10 +41,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# defer to bash dotfiles for the real fun stuff
-for file in ~/.{bash_prompt,bash_exports,bash_aliases}; do
-    [ -r "$file" ] && source "$file"
-done
-unset file
 

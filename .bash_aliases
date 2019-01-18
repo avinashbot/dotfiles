@@ -20,3 +20,4 @@ alias ts='gio trash'
 
 # lets you update configs
 alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+

@@ -1,10 +1,9 @@
 [user]
 	email = avinash@dwarapu.me
 	name = Avinash Dwarapu
+[core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
-
 [alias]
 	graph = log --graph --decorate --pretty=oneline --abbrev-commit --all
-[core]
-	excludesfile = ~/.gitignore_global
+

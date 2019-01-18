@@ -1,5 +1,5 @@
 # set editor
-export EDITOR='nano'
+export EDITOR='vim'
 
 # bash history size
 export HISTSIZE='500'
