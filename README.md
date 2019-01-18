@@ -21,17 +21,17 @@
 *[source](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo)*
 
 ```sh
-git clone --bare https://github.com/avinashbot/dotfiles $HOME/.cfg
-alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-cfg config --local status.showUntrackedFiles no
-cfg checkout
+git clone --bare https://github.com/avinashbot/dotfiles $HOME/.dotfiles
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles config --local status.showUntrackedFiles no
+dotfiles checkout
 source $HOME/.bashrc
 ```
 
 ### Customization
 
 ```sh
-cfg commit -am "made some changes"
-cfg push
+dotfiles commit -am "made some changes"
+dotfiles push
 ```
 
